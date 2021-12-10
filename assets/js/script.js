@@ -2,30 +2,44 @@
 var apiKey= "563492ad6f9170000100000164255fc255754e7795509040e702d9aa";
 var apiURL="https://api.pexels.com/v1/";
 
-var inputEl= $("submit");
-var searchButtonEl = $("button");
+$(document).ready(function() {
 
-var searchText ="";
+
+
+var inputEl= $(".input");
+var searchButtonEl = $("button");
+var searchText = inputEl[0];
+console.log(inputEl[0]);
 // var input = ""
 
 // create a function that when the user inputs text and hits Enter, it will perform the same function as when clicking the search button
-var submitSearch = function() {
-    $("input").on("input", function(event){
-        event.preventDefault();
-        search_text=event.target.value;
-        console.log(search_text);
-    });
-}
 
-
+var subject = inputEl[0].value;
+console.log(subject);
 
 // event listener for button clicks
-$("button").on("click", function(){
-    console.log("This is a button");
-    console.log(inputEl)
+$("#submit").on("click", function(event){
+    event.preventDefault();
+    inputEl[0].value = "";
+    fetch(`https://api.pexels.com/v1/search?query=${subject}`, {
+        headers: {
+          Authorization: apiKey
+        }
+    })
+        .then(response => response.json())
+        .then(result => {
+            console.log(result.photos)
+            result.photos.forEach(photo=>{
+                console.log(photo.src.large);
+            })
+        })
+        .catch(err => console.log(err))
+    
 });
 
+// GET https://api.pexels.com/v1/search
 
+});
 
 // When user submits input in the search bar, dynamically generate images based on the search query
 // Reference Pexels for image search queries
