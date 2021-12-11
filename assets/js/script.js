@@ -41,6 +41,8 @@ $("#submit").on("click", function(event){
 
 });
 
+
+
 // When user submits input in the search bar, dynamically generate images based on the search query
 // Reference Pexels for image search queries
 // SwiperJS code to create Swiper rows for images
