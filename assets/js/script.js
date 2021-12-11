@@ -30,10 +30,10 @@ $("#submit").on("click", function(event){
         .then(response => response.json())
         .then(result => {
             console.log(result.photos)
-            result.photos.forEach(photo=>{
-                console.log(photo.src.large);
+          //  result.photos.forEach(photo=> document.getElementById("listMovies").innerHTML = result;{
+               // console.log(photo.src.large); 
             })
-        })
+        
         .catch(err => console.log(err))
 });
 
