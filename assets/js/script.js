@@ -6,38 +6,41 @@ $(document).ready(function() {
 
 
 
-var inputEl= $(".input");
-// var searchButtonEl = $("button");
-// var searchText = inputEl[0];
-// console.log(inputEl[0]);
-// var input = ""
+    var inputEl= $("#submit");
+    // var searchButtonEl = $("button");
+    // var searchText = inputEl[0];
+    // console.log(inputEl[0]);
+    // var input = ""
 
-// create a function that when the user inputs text and hits Enter, it will perform the same function as when clicking the search button
+    // create a function that when the user inputs text and hits Enter, it will perform the same function as when clicking the search button
 
-var subject = inputEl[0];
+    
 
 
-// event listener for button clicks
-$("#submit").on("click", function(event){
-    event.preventDefault();
-    inputEl[0].value = "";
-    console.log(subject);
-    fetch(`https://api.pexels.com/v1/search?query=${subject}`, {
-        headers: {
-          Authorization: apiKey
-        }
-    })
-        .then(response => response.json())
-        .then(result => {
-            console.log(result.photos)
-            result.photos.forEach(photo=>{
-                console.log(photo.src.large);
-            })
+    // event listener for button clicks
+    $("#submit").on("click", function(event){
+        event.preventDefault();
+        var subject = inputEl[0].eq(0).val();
+        console.log(subject);
+        fetch(`https://api.pexels.com/v1/search?query=${subject}`, {
+            headers: {
+            Authorization: apiKey
+            }
         })
-        .catch(err => console.log(err))
-});
+            .then(response => response.json())
+            .then(result => {
+                console.log(result.photos)
+                result.photos.forEach(photo=>{
+                    console.log(photo.src);
+                    inputEl[0].value = "";
+                })
+            })
+            .catch(err => console.log(err))
+    });
 
-// GET https://api.pexels.com/v1/search
+    
+
+    // GET https://api.pexels.com/v1/search
 
 });
 
