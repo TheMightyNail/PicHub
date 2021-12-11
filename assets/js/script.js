@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 
 
-    var inputEl= $("#submit");
+    var inputEl= $("#searchBar");
     // var searchButtonEl = $("button");
     // var searchText = inputEl[0];
     // console.log(inputEl[0]);
@@ -20,8 +20,10 @@ $(document).ready(function() {
     // event listener for button clicks
     $("#submit").on("click", function(event){
         event.preventDefault();
-        var subject = inputEl[0].eq(0).val();
+        // get value of input from searchBar
+        var subject = inputEl.val();
         console.log(subject);
+        // fetch data from pexels and return a JSON response
         fetch(`https://api.pexels.com/v1/search?query=${subject}`, {
             headers: {
             Authorization: apiKey
@@ -32,12 +34,14 @@ $(document).ready(function() {
                 console.log(result.photos)
                 result.photos.forEach(photo=>{
                     console.log(photo.src);
-                    inputEl[0].value = "";
+                    inputEl.value = "";
                 })
             })
             .catch(err => console.log(err))
     });
 
+    // function to display image results
+    
     
 
     // GET https://api.pexels.com/v1/search
