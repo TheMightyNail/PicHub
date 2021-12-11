@@ -31,7 +31,7 @@ $("#submit").on("click", function(event){
         .then(result => {
             console.log(result.photos)
           //  result.photos.forEach(photo=> document.getElementById("listMovies").innerHTML = result;{
-               // console.log(photo.src.large); 
+                console.log(photo.src.large); 
             })
         
         .catch(err => console.log(err))
