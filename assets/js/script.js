@@ -7,20 +7,21 @@ $(document).ready(function() {
 
 
 var inputEl= $(".input");
-var searchButtonEl = $("button");
-var searchText = inputEl[0];
-console.log(inputEl[0]);
+// var searchButtonEl = $("button");
+// var searchText = inputEl[0];
+// console.log(inputEl[0]);
 // var input = ""
 
 // create a function that when the user inputs text and hits Enter, it will perform the same function as when clicking the search button
 
-var subject = inputEl[0].value;
-console.log(subject);
+var subject = inputEl[0];
+
 
 // event listener for button clicks
 $("#submit").on("click", function(event){
     event.preventDefault();
     inputEl[0].value = "";
+    console.log(subject);
     fetch(`https://api.pexels.com/v1/search?query=${subject}`, {
         headers: {
           Authorization: apiKey
@@ -34,7 +35,6 @@ $("#submit").on("click", function(event){
             })
         })
         .catch(err => console.log(err))
-    
 });
 
 // GET https://api.pexels.com/v1/search
