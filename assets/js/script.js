@@ -6,38 +6,45 @@ $(document).ready(function() {
 
 
 
-var inputEl= $(".input");
-// var searchButtonEl = $("button");
-// var searchText = inputEl[0];
-// console.log(inputEl[0]);
-// var input = ""
+    var inputEl= $("#searchBar");
+    // var searchButtonEl = $("button");
+    // var searchText = inputEl[0];
+    // console.log(inputEl[0]);
+    // var input = ""
 
-// create a function that when the user inputs text and hits Enter, it will perform the same function as when clicking the search button
+    // create a function that when the user inputs text and hits Enter, it will perform the same function as when clicking the search button
 
-var subject = inputEl[0];
+    
 
 
-// event listener for button clicks
-$("#submit").on("click", function(event){
-    event.preventDefault();
-    inputEl[0].value = "";
-    console.log(subject);
-    fetch(`https://api.pexels.com/v1/search?query=${subject}`, {
-        headers: {
-          Authorization: apiKey
-        }
-    })
-        .then(response => response.json())
-        .then(result => {
-            console.log(result.photos)
-          //  result.photos.forEach(photo=> document.getElementById("listMovies").innerHTML = result;{
-                console.log(photo.src.large); 
+    // event listener for button clicks
+    $("#submit").on("click", function(event){
+        event.preventDefault();
+        // get value of input from searchBar
+        var subject = inputEl.val();
+        console.log(subject);
+        // fetch data from pexels and return a JSON response
+        fetch(`https://api.pexels.com/v1/search?query=${subject}`, {
+            headers: {
+            Authorization: apiKey
+            }
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log(result.photos)
+                result.photos.forEach(photo=>{
+                    console.log(photo.src);
+                    inputEl.value = "";
+                })
             })
-        
-        .catch(err => console.log(err))
-});
+            .catch(err => console.log(err))
+    });
 
-// GET https://api.pexels.com/v1/search
+    // function to display image results
+    
+    
+
+    // GET https://api.pexels.com/v1/search
 
 });
 
