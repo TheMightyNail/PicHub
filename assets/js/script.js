@@ -7,6 +7,7 @@ $(document).ready(function() {
 
 
     var inputEl= $("#searchBar");
+    // var imageResultsEl = document.querySelector("#results");
     // var searchButtonEl = $("button");
     // var searchText = inputEl[0];
     // console.log(inputEl[0]);
@@ -34,7 +35,7 @@ $(document).ready(function() {
                 console.log(result.photos)
                 result.photos.forEach(photo=>{
                     console.log(photo.src);
-                    displayImages();
+                    displayImages(result);
                     inputEl.value = "";
                 })
             })
@@ -42,8 +43,12 @@ $(document).ready(function() {
     });
 
     // function to display image results
-    var displayImages = function() {
-        document.createElement("div");
+    var displayImages = function(result) {
+        result.photos.forEach((image) => {
+            var photo=document.createElement("div");
+            photo.innerHTML=`<img src=${image.src.medium}>`;
+            document.querySelector("#results").appendChild(photo);
+        });
     }
     
 
