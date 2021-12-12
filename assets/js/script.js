@@ -34,6 +34,7 @@ $(document).ready(function() {
                 console.log(result.photos)
                 result.photos.forEach(photo=>{
                     console.log(photo.src);
+                    displayImages();
                     inputEl.value = "";
                 })
             })
@@ -41,7 +42,9 @@ $(document).ready(function() {
     });
 
     // function to display image results
-    
+    var displayImages = function() {
+        document.createElement("div");
+    }
     
 
     // GET https://api.pexels.com/v1/search
