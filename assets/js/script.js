@@ -47,7 +47,7 @@ $(document).ready(function() {
         result.photos.forEach((image) => {
             var photo=document.createElement("div");
             photo.innerHTML=`<img src=${image.src.medium}>`;
-            document.querySelector("#results").appendChild(photo);
+            document.querySelector(".swiper-slide").appendChild(photo);
         });
     }
     
