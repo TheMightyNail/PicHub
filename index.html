@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PicHub</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -19,7 +20,7 @@
                 An Image for Every Occasion.
             </h2>
         </header>
-    </div>  
+    </div>
 
     <!-- hero section -->
     <section class="has-background-dark p-2">
@@ -36,8 +37,9 @@
     </section>
     <!-- end of hero section -->
     <!-- results section -->
-    <section id="results" class= "has-background-grey">
+    <section id="results" class="has-background-grey">
         <div class="swiper-slider">
+<<<<<<< HEAD
              <h2>Results</h2>
             <div class="swiper-container swiper content-center m-2">
             <div class="swiper-wrapper">
@@ -116,17 +118,55 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             </div>
+=======
+            <h2>Results</h2>
+            <div class="swiper-container swiper">
+                <div class="swiper-wrapper">
+                   
+                    
+
+                </div>
+                <!-- Add Arrows -->
+                
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <!-- Swiper JS -->
+            <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 6,
+                    spaceBetween: 10,
+                    slidesPerGroup: 2,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+            </script>
+
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+>>>>>>> d96f48d4a88a745cd90eabad7434d764650eaa43
         </div>
     </section>
 
     <!-- results end -->
-    
+
     <!-- scripts to load -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
 
 </body>
+<<<<<<< HEAD
 <footer class="footer">
     <div class="content has-text-centered">
       <p>
@@ -134,4 +174,7 @@
       </p>
     </div>
   </footer>
+=======
+
+>>>>>>> d96f48d4a88a745cd90eabad7434d764650eaa43
 </html>
