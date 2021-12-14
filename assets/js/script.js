@@ -60,7 +60,11 @@ $(document).ready(function() {
     // GET https://api.pexels.com/v1/search
 
   // GET https://api.pexels.com/v1/search
+
+  // GET https://api.pexels.com/videos/search
 });
+
+
 
 // When user submits input in the search bar, dynamically generate images based on the search query
 // Reference Pexels for image search queries
