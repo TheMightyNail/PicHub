@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicHub</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div class="columns is-mobile has-background-info-light">
+        <header class="column">
+            <h1 class="title is-1 mb-5 is-flex is-justify-content-center has-text-warning-dark has-text-weight-bold">
+                PicHub
+            </h1>
+            <h2 class="subtitle is-5 is-flex is-justify-content-center has-text-weight-bold">
+                An Image for Every Occasion.
+            </h2>
+        </header>
+    </div>
+
+    <!-- hero section -->
+    <section class="has-background-dark p-2">
+        <!-- search input -->
+        <form class="is-flex is-justify-content-center m-6 p-1">
+            <div>
+                <label for=></label>
+                <input type="submit text" id="searchBar" class="input has-background-light is-medium" placeholder="Search"/>
+            </div>
+
+            <button type="submit" id="submit" class="button has-background-info-light is-medium has-text-weight-bold">Search</button>
+            <button type="submit" id="submit" class="button is-medium has-background-info-light has-text-weight-bold">Clear</button>
+        </form>
+    </section>
+    <!-- end of hero section -->
+    <!-- results section -->
+    <section id="results" class="has-background-grey">
+        <div class="swiper-slider">
+            <h2>Results</h2>
+            <div class="swiper-container swiper">
+                <div class="swiper-wrapper">
+                   
+                    
+
+                </div>
+                <!-- Add Arrows -->
+                
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <!-- Swiper JS -->
+            <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 6,
+                    spaceBetween: 10,
+                    slidesPerGroup: 2,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+            </script>
+
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- results end -->
+
+    <!-- scripts to load -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+<footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>PicHub</strong> by <a>Ian, Christian and Derek</a>.
+      </p>
+    </div>
+  </footer>
+</html>
