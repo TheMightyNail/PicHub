@@ -46,7 +46,7 @@ $(document).ready(function() {
     var displayImages = function(result) {
         var photohtml=""
         result.photos.forEach((image) => {
-             photohtml+=` <div class="swiper-slide"> <img src=${image.src.medium}></div>`
+             photohtml+=` <div class="swiper-slide"> <img src=${image.src.portrait}></div>`
             //var photo=document.createElement("div");
            // photo.innerHTML=`<img src=${image.src.medium}>`;
             // document.querySelector(".swiper-wrapper").appendChild(photohtml);
