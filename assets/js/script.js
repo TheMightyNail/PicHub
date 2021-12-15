@@ -30,6 +30,7 @@ $(document).ready(function() {
             Authorization: apiKey
             }
         })
+
             .then(response => response.json())
             .then(result => {
                 console.log(result.photos)
@@ -41,6 +42,30 @@ $(document).ready(function() {
             })
             .catch(err => console.log(err))
     });
+
+        // event listener for button clicks
+        //$("#submit").on("click", function(event){
+           // event.preventDefault();
+            // get value of input from searchBar
+            //var subject = inputEl.val();
+           // console.log(subject);
+            // fetch data from pexels and return a JSON response
+           // fetch(`https://api.pexels.com/videos/search?query=${subject}`, {
+               // headers: {
+                //Authorization: apiKey
+               // }
+           // })
+    
+                //.then(response => response.json())
+                //.then(result => {
+                   // console.log(result.video)
+                   // result.videos.forEach(video=>{
+                       // console.log(video.src);
+                       // displayImages(result);
+                        //inputEl.value = "";
+                    //})
+               // })
+               // .catch(err => console.log(err))
 
     // function to display image results
     var displayImages = function(result) {
