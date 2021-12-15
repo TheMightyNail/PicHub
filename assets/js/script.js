@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     
 
-
+    var pictureClick;
     // event listener for button clicks
     $("#submit").on("click", function(event){
         event.preventDefault();
@@ -34,11 +34,22 @@ $(document).ready(function() {
             .then(response => response.json())
             .then(result => {
                 console.log(result.photos)
-                result.photos.forEach(photo=>{
+                result.photos.forEach((photo, index)=>{
+                    console.log(result.photos.length)
                     console.log(photo.src);
                     displayImages(result);
                     inputEl.value = "";
+                    
+                    // event listener to click on images
+                    for (const property in pictureClick) {
+                        console.log(pictureClick[property]);
+                        pictureClick[property].onclick = function(){
+                            console.log("clicked");
+                            // need logic to display modal with image original size OR link to a different page that displays entire image
+                        }
+                      }
                 })
+                
             })
             .catch(err => console.log(err))
     });
@@ -71,11 +82,8 @@ $(document).ready(function() {
     var displayImages = function(result) {
         var photohtml=""
         result.photos.forEach((image) => {
-             photohtml+=` <div class="swiper-slide"> <img src=${image.src.portrait}></div>`
-            //var photo=document.createElement("div");
-           // photo.innerHTML=`<img src=${image.src.medium}>`;
-            // document.querySelector(".swiper-wrapper").appendChild(photohtml);
-            
+             photohtml+=` <div class="swiper-slide"> <img class="picButton" src=${image.src.portrait}></div>`
+            pictureClick = document.getElementsByClassName("picButton")
         });
         document.querySelector(".swiper-wrapper").innerHTML=photohtml
     }
@@ -85,15 +93,4 @@ $(document).ready(function() {
     // GET https://api.pexels.com/v1/search
 
   // GET https://api.pexels.com/v1/search
-
-  // GET https://api.pexels.com/videos/search
 });
-
-
-
-// When user submits input in the search bar, dynamically generate images based on the search query
-// Reference Pexels for image search queries
-// SwiperJS code to create Swiper rows for images
-// Use slides per view to limit the amount of images displayed at once, maybe?
-// How many images can the page load at once?
-// utilize localStorage for persistence - previously searched list by that user, or previously viewed images?
