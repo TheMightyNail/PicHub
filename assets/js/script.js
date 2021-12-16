@@ -54,6 +54,10 @@ $(document).ready(function() {
             .catch(err => console.log(err))
     });
 
+
+    
+
+    
         // event listener for button clicks
         //$("#submit").on("click", function(event){
            // event.preventDefault();
@@ -92,5 +96,5 @@ $(document).ready(function() {
 
     // GET https://api.pexels.com/v1/search
 
-  // GET https://api.pexels.com/v1/search
+  // GET https://api.pexels.com/videos/search
 });
