@@ -98,3 +98,10 @@ $(document).ready(function() {
 
   // GET https://api.pexels.com/videos/search
 });
+{
+   // "name": "Christian", 
+   // "height" : "20px",
+   //"width" : 80
+}
+//var myarray=[1,2,3]
+//console.log (myarray) 
